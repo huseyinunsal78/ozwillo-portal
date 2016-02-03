@@ -70,7 +70,7 @@ var UserPicker = React.createClass({
             <div className="col-sm-10">
                 <Typeahead onSelect={this.addUser} source={this.props.source} placeholder={t('settings-add-a-user')}
                     display="fullname" suggestionTemplate={this.renderSuggestionTemplate}
-                    fieldId="search-user" />
+                    fieldId="search-user" minLength={3} />
             </div>
         </div>
       </div>

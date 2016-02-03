@@ -7,6 +7,7 @@ package org.oasis_eu.portal.model.appsmanagement;
 public class User {
 	String fullname;
 	String userid;
+	String email;
 	boolean admin;
 
 	public String getFullname() {
@@ -33,9 +34,24 @@ public class User {
 		this.admin = admin;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public User(String userid, String fullname, boolean admin) {
 		this.fullname = fullname;
 		this.userid = userid;
+		this.admin = admin;
+
+	}
+	public User(String userid, String email, String fullname, boolean admin) {
+		this.fullname = fullname;
+		this.userid = userid;
+		this.email = email;
 		this.admin = admin;
 
 	}

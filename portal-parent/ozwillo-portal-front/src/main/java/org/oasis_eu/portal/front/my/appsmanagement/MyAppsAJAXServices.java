@@ -105,7 +105,7 @@ public class MyAppsAJAXServices extends BaseAJAXServices {
 
 	@RequestMapping(value = "/users/instance/{instanceId}", method = RequestMethod.POST)
 	public Map<String,String> setUsersForInstance(@PathVariable String instanceId, @RequestBody List<User> users) {
-		appManagementService.saveAppUsers(instanceId, users.stream().map(User::getUserid).collect(Collectors.toList()));
+		appManagementService.saveAppUsers(instanceId, users);
 		Map<String, String> result = new HashMap<>();
 		result.put("result", "OK");
 		return result;
