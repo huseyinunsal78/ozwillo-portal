@@ -4,7 +4,7 @@ package org.oasis_eu.portal.model.appsmanagement;
 * User: schambon
 * Date: 8/14/14
 */
-public class User {
+public class User implements Comparable<User> {
 	String fullname;
 	String userid;
 	String email;
@@ -57,5 +57,15 @@ public class User {
 	}
 
 	public User() {
+	}
+
+	@Override
+	public int compareTo(User user) {
+		if (getFullname() == null)
+			return -1;
+		else if (user.getFullname() == null)
+			return 1;
+		else
+			return getFullname().toLowerCase().compareTo(user.getFullname().toLowerCase());
 	}
 }
